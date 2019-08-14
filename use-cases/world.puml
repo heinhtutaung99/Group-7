@@ -1,109 +1,19 @@
 @startuml
 
-actor emp as "Employee"
+actor RC as "Report Coordinator"
 
-rectangle Database
+rectangle "System" {
+    usecase UC1 as "Country Report"
+    usecase UC2 as "City Report"
+    usecase UC3 as "Population Report"
+    usecase UC4 as "Capital City Report"
+    usecase UC5 as "Addition Report"
 
-rectangle "Reports" {
-
-usecase UC1 as "Usecase 1"
-usecase UC2 as "Usecase 2"
-usecase UC3 as "Usecase 3"
-usecase UC4 as "Usecase 4"
-usecase UC5 as "Usecase 5 "
-usecase UC6 as "Usecase 6"
-usecase UC7 as "Usecase 7"
-usecase UC8 as "Usecase 8"
-usecase UC9 as "Usecase 9"
-usecase UC10 as "Usecase 10"
-usecase UC11 as "usecase 11"
-usecase UC12 as "Usecase 12"
-usecase UC13 as "Usecase 13"
-usecase UC14 as "Usecase 14"
-usecase UC15 as "Usecase 15"
-usecase UC16 as "Usecase 16"
-usecase UC17 as "Usecase 17"
-usecase UC18 as "Usecase 18"
-usecase UC19 as "Usecase 19"
-usecase UC20 as "Usecase 20"
-usecase UC21 as "Usecase 21"
-usecase UC22 as "Usecase 22"
-usecase UC23 as "Usecase 23"
-usecase UC24 as "Usecase 24"
-usecase UC25 as "Usecase 25"
-usecase UC26 as "Usecase 26"
-usecase UC27 as "Usecase 27"
-usecase UC28 as "Usecase 28"
-usecase UC29 as "Usecase 29"
-usecase UC30 as "Usecase 30"
-usecase UC31 as "Usecase 31"
-usecase UC32 as "Usecase 32"
-usecase UC33 as "Usecase 33"
-usecase UC34 as "Usecase 34"
-usecase UC35 as "Usecase 35"
-usecase UC36 as "Usecase 36"
-
-usecase UC_country as "Country Report"
-usecase UC_city as "City Report"
-usecase UC_capitalcity as "Capital City Report"
-usecase UC_population as "Population Report"
-usecase UC_addition as "Additional Report"
-
-emp --> Database
-Database -- UC_country
-Database -- UC_city
-Database -- UC_capitalcity
-Database -- UC_population
-Database -- UC_addition
-
-UC_country--UC1
-UC1--UC2
-UC2--UC3
-UC3--UC4
-UC4--UC5
-UC5--UC6
-
-UC_city--UC7
-UC7--UC8
-UC8--UC9
-UC9--UC10
-UC10--UC11
-UC11--UC12
-UC12--UC13
-UC13--UC14
-UC14--UC15
-UC15--UC16
-
-UC_capitalcity--UC17
-UC17--UC18
-UC18--UC19
-
-
-UC_population--UC20
-UC20--UC21
-UC21--UC22
-UC22--UC23
-UC23--UC24
-UC24--UC25
-
-UC_addition--UC26
-UC26--UC27
-UC27--UC28
-UC28--UC29
-UC29--UC30
-UC30--UC31
-UC31--UC32
-UC32--UC33
-UC33--UC34
-UC34--UC35
-UC35--UC36
-
-note right of emp
-user connects to database
-and queries to produce
-reports (use-cases)
-end note
-
+RC--UC1
+RC--UC2
+RC--UC3
+RC--UC4
+RC--UC5
 }
 
 @enduml
