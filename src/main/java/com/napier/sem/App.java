@@ -42,7 +42,7 @@ public class App
             }
             catch (SQLException sqle)
             {
-                System.out.println("Failed to connect to database attempt " + Integer.toString(i));
+                System.out.println("Failed to connect to database attempt " + i);
                 System.out.println(sqle.getMessage());
             }
             catch (InterruptedException ie)
@@ -107,16 +107,16 @@ public class App
 /**
  * To format the country object of database to string
  */
-    /
+
     public void printCountryReport(ArrayList<Country> countries)
     {
         // Print header
-        System.out.println(String.format("%-10s %-15s %-20s %-8s %-15s %-15s", "Code", "Name", "Continent", "Region", "Population", "Capital"));
+        System.out.println(String.format("%-10s %-35s %-20s %-15s %-15s %-15s", "Code", "Name", "Continent", "Region", "Population", "Capital"));
         // Loop over all employees in the list
         for (Country report : countries)
         {
             String cou_string =
-                    String.format("%-10s %-20s %-20s %-20s %-20s %-20s",
+                    String.format("%-10s %-35s %-20s %-15s %-15s %-15s",
                             report.code, report.name, report.continent, report.region, report.population, report.captical);
             System.out.println(cou_string);
         }
