@@ -103,6 +103,34 @@ public class App
 
         return null;
     }
+    /**
+     * Report two to generate all the countries in the world by decending order
+     * @return
+     */
+    public ArrayList<City> getReportTwo()
+    {
+        try {
+            Statement stmt = con.createStatement();
+            String strSelect = "";
+            ResultSet rset = null;
+            strSelect = "select name,countrycode,district,population from city order by population DESC;\n";
+            rset = stmt.executeQuery(strSelect);
+            ArrayList<City> cities = new ArrayList<City>();
+            while (rset.next()) {
+                City report = new City();
+                report.name = rset.getString(1);
+                report.countrycode = rset.getString(2);
+                report.district = rset.getString(3);
+                report.population = rset.getInt(4);
+                cities.add(report);
+            }
+            return cities;
+        }
+        catch (SQLException e) {
+            System.out.println(e.getMessage());
+        }
+        return null;
+    }
 
 /**
  * To format the country object of database to string
@@ -121,20 +149,30 @@ public class App
             System.out.println(cou_string);
         }
     }
-
+    public void printCityReport(ArrayList<City> cities)
+    {
+        // Print header
+        System.out.println(String.format("%-10s %-35s %-20s %-15s", "Name", "CountryCode", "District", "Population"));
+        // Loop over all employees in the list
+        for (City report_city : cities)
+        {
+            String cit_string =
+                    String.format("%-10s %-35s %-20s %-15s",
+                            report_city.name, report_city.countrycode, report_city.district, report_city.population);
+            System.out.println(cit_string);
+        }
+    }
     public static void main(String[] args)
     {
         // Create new Application
         App a = new App();
-
         // Connect to database
         a.connect();
         //Country arraylist
-        ArrayList<Country> countries=a.getReportOne();
-        a.printCountryReport(countries);
-
-
-
+        //ArrayList<Country> countries=a.getReportOne();
+        //a.printCountryReport(countries);
+        ArrayList<City> cities=a.getReportTwo();
+        a.printCityReport(cities);
         // Disconnect from database
         a.disconnect();
     }
