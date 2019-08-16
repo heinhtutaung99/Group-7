@@ -178,5 +178,6 @@ public class App
         a.printCityReport(cities);
         // Disconnect from database
         a.disconnect();
+        //city
     }
 }
