@@ -1,8 +1,6 @@
 package com.napier.sem;
-
 import java.sql.*;
 import java.util.ArrayList;
-
 
 public class App
 {
@@ -104,7 +102,7 @@ public class App
         return null;
     }
     /**
-     * Report two to generate all the countries in the world by decending order
+     * Report two to generate all the city in the world by decending order
      * @return
      */
     public ArrayList<City> getReportTwo()
@@ -135,7 +133,6 @@ public class App
 /**
  * To format the country object of database to string
  */
-
     public void printCountryReport(ArrayList<Country> countries)
     {
         // Print header
@@ -149,6 +146,9 @@ public class App
             System.out.println(cou_string);
         }
     }
+    /**
+     * To format the city object of database to string
+     */
     public void printCityReport(ArrayList<City> cities)
     {
         // Print header
@@ -162,6 +162,9 @@ public class App
             System.out.println(cit_string);
         }
     }
+    /**
+     * Java main method
+     */
     public static void main(String[] args)
     {
         // Create new Application
