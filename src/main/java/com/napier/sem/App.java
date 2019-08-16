@@ -104,6 +104,9 @@ public class App
 
         return null;
     }
+/**
+ * eport one to generate all the countries in a continent by decending order
+ */
 
     public ArrayList<Country> getReportTwo()
     {
@@ -153,7 +156,10 @@ public class App
             System.out.println(cou_string);
         }
     }
+    /**
+     * Main method
 
+     */
     public static void main(String[] args)
     {
         // Create new Application
