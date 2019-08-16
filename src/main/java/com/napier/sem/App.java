@@ -104,6 +104,36 @@ public class App
         return null;
     }
 
+    public ArrayList<Country> getReportSix()
+    {
+        try {
+            Statement stmt = con.createStatement();
+            String strSelect = "";
+            ResultSet rset = null;
+            strSelect = "select code, country.name, continent, region, country.population, city.name from country, city where country.capital= city.id and region='Caribbean' ORDER BY population DESC LIMIT 5;\n";
+            rset = stmt.executeQuery(strSelect);
+            ArrayList<Country> countries = new ArrayList<Country>();
+
+            while (rset.next()) {
+                Country report = new Country();
+                report.code = rset.getString(1);
+                report.name = rset.getString(2);
+                report.continent = rset.getString(3);
+                report.region = rset.getString(4);
+                report.population = rset.getInt(5);
+                report.captical = rset.getString(6);
+                countries.add(report);
+
+            }
+            return countries;
+        }
+        catch (SQLException e) {
+
+            System.out.println(e.getMessage());
+        }
+
+        return null;
+    }
 /**
  * To format the country object of database to string
  */
@@ -130,9 +160,8 @@ public class App
         // Connect to database
         a.connect();
         //Country arraylist
-        ArrayList<Country> countries=a.getReportOne();
+        ArrayList<Country> countries=a.getReportSix();
         a.printCountryReport(countries);
-
 
 
         // Disconnect from database
