@@ -105,7 +105,7 @@ public class App
      * Report two to generate all the city in the world by decending order
      * @return
      */
-    public ArrayList<City> getReportTwo()
+    public ArrayList<City> getReport7()
     {
         try {
             Statement stmt = con.createStatement();
@@ -174,7 +174,7 @@ public class App
         //Country arraylist
         //ArrayList<Country> countries=a.getReportOne();
         //a.printCountryReport(countries);
-        ArrayList<City> cities=a.getReportTwo();
+        ArrayList<City> cities=a.getReport7();
         a.printCityReport(cities);
         // Disconnect from database
         a.disconnect();
