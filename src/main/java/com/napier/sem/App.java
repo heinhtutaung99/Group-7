@@ -90,7 +90,6 @@ public class App
                 report.population = rset.getInt(5);
                 report.captical = rset.getString(6);
                 countries.add(report);
-
             }
             return countries;
         }
@@ -113,6 +112,9 @@ public class App
             ResultSet rset = null;
             strSelect = "select name,countrycode,district,population from city order by population DESC;\n";
             rset = stmt.executeQuery(strSelect);
+            if (rset == null) {
+                System.out.println("no statement execute queries");
+            }
             ArrayList<City> cities = new ArrayList<City>();
             while (rset.next()) {
                 City report = new City();
@@ -129,7 +131,37 @@ public class App
         }
         return null;
     }
-
+    /**
+     * Report two to generate all the city in the world by decending order
+     * @return
+     */
+    public ArrayList<City> getReport8()
+    {
+        try {
+            Statement stmt = con.createStatement();
+            String strSelect = "";
+            ResultSet rset = null;
+            strSelect = "select city.name,city.countrycode,city.district,city.population from country, city where country.capital= city.id order by country.region DESC;\n";
+            rset = stmt.executeQuery(strSelect);
+            if (rset == null) {
+                System.out.println("no statement execute queries");
+            }
+            ArrayList<City> cities = new ArrayList<City>();
+            while (rset.next()) {
+                City report = new City();
+                report.name = rset.getString(1);
+                report.countrycode = rset.getString(2);
+                report.district = rset.getString(3);
+                report.population = rset.getInt(4);
+                cities.add(report);
+            }
+            return cities;
+        }
+        catch (SQLException e) {
+            System.out.println(e.getMessage());
+        }
+        return null;
+    }
 /**
  * To format the country object of database to string
  */
@@ -151,13 +183,19 @@ public class App
      */
     public void printCityReport(ArrayList<City> cities)
     {
+        if (cities == null){
+            System.out.println("No Cities Data");
+            return;
+        }
         // Print header
-        System.out.println(String.format("%-10s %-35s %-20s %-15s", "Name", "CountryCode", "District", "Population"));
+        System.out.println(String.format("%-30s %-20s %-20s %-20s", "Name", "CountryCode", "District", "Population"));
         // Loop over all employees in the list
         for (City report_city : cities)
         {
+            if (report_city == null)
+                continue;
             String cit_string =
-                    String.format("%-10s %-35s %-20s %-15s",
+                    String.format("%-30s %-20s %-20s %-20s",
                             report_city.name, report_city.countrycode, report_city.district, report_city.population);
             System.out.println(cit_string);
         }
@@ -174,7 +212,9 @@ public class App
         //Country arraylist
         //ArrayList<Country> countries=a.getReportOne();
         //a.printCountryReport(countries);
-        ArrayList<City> cities=a.getReport7();
+        //ArrayList<City> cities=a.getReport7();
+        //a.printCityReport(cities);
+        ArrayList<City> cities=a.getReport8();
         a.printCityReport(cities);
         // Disconnect from database
         a.disconnect();
