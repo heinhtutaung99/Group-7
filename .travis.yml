@@ -20,8 +20,8 @@ jobs:
     - stage: Units Tests
       install: skip
       script:
-        - mvn test -Dtest="com.napier.sem.places.*Test"D
-    - stage:IT test
+        - mvn test -Dtest="com.napier.sem.places.*Test"
+    - stage: IT test
         script:
           - sudo docker build -t db db
           - sudo docker run --rm -d -p 3306:3306 db
