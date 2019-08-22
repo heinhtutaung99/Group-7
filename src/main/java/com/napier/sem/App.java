@@ -104,33 +104,33 @@ public class App
      * Report two to generate all the city in the world by decending order
      * @return
      */
-    public ArrayList<City> getReport7()
-    {
-        try {
-            Statement stmt = con.createStatement();
-            String strSelect = "";
-            ResultSet rset = null;
-            strSelect = "select name,countrycode,district,population from city order by population DESC;\n";
-            rset = stmt.executeQuery(strSelect);
-            if (rset == null) {
-                System.out.println("no statement execute queries");
-            }
-            ArrayList<City> cities = new ArrayList<City>();
-            while (rset.next()) {
-                City report = new City();
-                report.name = rset.getString(1);
-                report.countrycode = rset.getString(2);
-                report.district = rset.getString(3);
-                report.population = rset.getInt(4);
-                cities.add(report);
-            }
-            return cities;
-        }
-        catch (SQLException e) {
-            System.out.println(e.getMessage());
-        }
-        return null;
-    }
+//    public ArrayList<City> getReport7()
+//    {
+//        try {
+//            Statement stmt = con.createStatement();
+//            String strSelect = "";
+//            ResultSet rset = null;
+//            strSelect = "select name,countrycode,district,population from city order by population DESC;\n";
+//            rset = stmt.executeQuery(strSelect);
+//            if (rset == null) {
+//                System.out.println("no statement execute queries");
+//            }
+//            ArrayList<City> cities = new ArrayList<City>();
+//            while (rset.next()) {
+//                City report = new City();
+//                report.name = rset.getString(1);
+//                report.countrycode = rset.getString(2);
+//                report.district = rset.getString(3);
+//                report.population = rset.getInt(4);
+//                cities.add(report);
+//            }
+//            return cities;
+//        }
+//        catch (SQLException e) {
+//            System.out.println(e.getMessage());
+//        }
+//        return null;
+//    }
     /**
      * Report two to generate all the city in the world by decending order
      * @return
@@ -141,7 +141,7 @@ public class App
             Statement stmt = con.createStatement();
             String strSelect = "";
             ResultSet rset = null;
-            strSelect = "select city.name,city.countrycode,city.district,city.population from country, city where country.capital= city.id order by country.region DESC;\n";
+            strSelect = "select city.name,city.CountryCode,city.district,city.population from country, city where country.capital= city.id order by country.region DESC;\n";
             rset = stmt.executeQuery(strSelect);
             if (rset == null) {
                 System.out.println("no statement execute queries");
@@ -149,10 +149,11 @@ public class App
             ArrayList<City> cities = new ArrayList<City>();
             while (rset.next()) {
                 City report = new City();
-                report.name = rset.getString(1);
-                report.countrycode = rset.getString(2);
-                report.district = rset.getString(3);
-                report.population = rset.getInt(4);
+                report.setName( rset.getString(1));
+                Country c1 = getCountrybyCode(rset.getString(2));
+                report.setCountry(c1);
+                report.setDistrict(rset.getString(3));
+                report.setPopulation(rset.getInt(4));
                 cities.add(report);
             }
             return cities;
@@ -161,6 +162,26 @@ public class App
             System.out.println(e.getMessage());
         }
         return null;
+    }
+
+    public Country getCountrybyCode(String ccode)
+    {
+        Country c = new Country();
+        try {
+            Statement stmt = con.createStatement();
+            String strSelect = "";
+            ResultSet rset = null;
+            strSelect = "select name from country where country.Code = '+ccode+' ";
+            rset = stmt.executeQuery(strSelect);
+            c.name = rset.getString(1);
+
+        }catch(SQLException e)
+        {
+
+            System.out.println(e);
+
+        }
+        return c;
     }
 /**
  * To format the country object of database to string
@@ -196,7 +217,7 @@ public class App
                 continue;
             String cit_string =
                     String.format("%-30s %-20s %-20s %-20s",
-                            report_city.name, report_city.countrycode, report_city.district, report_city.population);
+                            report_city.getName(), report_city.getCountry().name, report_city.getDistrict(), report_city.getPopulation());
             System.out.println(cit_string);
         }
     }

@@ -30,10 +30,9 @@ public class AppTest
     {
         ArrayList<City> cities = new ArrayList<City>();
         City citydata = new City();
-        citydata.name = "Yangon";
-        citydata.countrycode = "23434";
-        citydata.district = "Yangon";
-        citydata.population = 102030403;
+        citydata.setName("Yangon");
+        citydata.setDistrict("Yangon");
+        citydata.setPopulation(102030403);
         cities.add(citydata);
         app.printCityReport(cities);
     }

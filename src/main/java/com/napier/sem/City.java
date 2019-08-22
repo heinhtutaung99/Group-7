@@ -3,19 +3,53 @@ package com.napier.sem;
  * Create public class for the City
  */
 public class City {
-    String name;
-    String countrycode;
-    String district;
-    int population;
-    public City cty;
+    private String name;
+    private Country country;
 
-    @Override
-    public String toString() {
-        return "City{" +
-                ", name='" + name + '\'' +
-                "countrycode='" + countrycode + '\'' +
-                ", district='" + district + '\'' +
-                ", population=" + population +'\'' +
-                '}';
+    public City(String name, Country country, String district, int population) {
+        this.name = name;
+        this.country = country;
+        this.district = district;
+        this.population = population;
     }
+    public City(){
+
+    }
+
+    public String getName() {
+        return name;
+    }
+
+    public void setName(String name) {
+        this.name = name;
+    }
+
+    public Country getCountry() {
+        return country;
+    }
+
+    public void setCountry(Country country) {
+        this.country = country;
+    }
+
+    public String getDistrict() {
+        return district;
+    }
+
+    public void setDistrict(String district) {
+        this.district = district;
+    }
+
+    public int getPopulation() {
+        return population;
+    }
+
+    public void setPopulation(int population) {
+        this.population = population;
+    }
+
+    private String district;
+    private int population;
 }
+
+
