@@ -21,10 +21,12 @@ jobs:
       install: skip
       script:
         - mvn test -Dtest="com.napier.sem.places.*Test"
-
-
-
-
+        -
+    - stage:Integration
+        script:
+          - sudo docker build -t db db
+          - sudo docker run --rm -d -p 3306:3306 db
+          - mvn test -Dtest="com.napier.sem.utils.AppTest"
 
     - stage: deploy
       install: skip
