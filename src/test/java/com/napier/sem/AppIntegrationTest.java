@@ -8,21 +8,20 @@ import java.util.ArrayList;
 
 import static org.junit.jupiter.api.Assertions.*;
 
-public class AppIntegrationTest
-{
+public class AppIntegrationTest {
     static App app;
 
     @BeforeAll
-    static void init()
-    {
+    static void init() {
         app = new App();
         app.connect("localhost:33060");
     }
-
-    @Test
-    void testGetCity()
-    {
-        ArrayList<City> cities =app.getReport8();
-        app.printCityReport(cities);
-    }
 }
+
+//    @Test
+//    void testGetCity()
+//    {
+//        ArrayList<City> cities =app.getReport8();
+//        app.printCityReport(cities);
+//    }
+//}
