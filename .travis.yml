@@ -12,7 +12,7 @@ services:
 install:
   - docker build -t database db/.
   - docker run --rm -d -e MYSQL_ROOT_PASSWORD=pass -p 33060:3306 database
-  - mvn install -DskipTests=true -Dmaven.javadoc.skip=true -B -V
+  - mvn install -DskipTests=true -D maven.javadoc.skip=true -B -V
 
 before_script:
   - mvn clean
@@ -23,9 +23,6 @@ jobs:
       install: skip
       jdk: oraclejdk11
       script: mvn test -Dtest=com.napier.sem.AppTest
-    - stage: integration tests
-      jdk: oraclejdk11
-      script: mvn test -Dtest=com.napier.sem.AppIntegrationTest
     - stage: deploy
       install: skip
       jdk: oraclejdk11
