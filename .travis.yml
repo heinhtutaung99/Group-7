@@ -21,7 +21,7 @@ jobs:
       install: skip
       script:
         - mvn test -Dtest="com.napier.sem.places.*Test"
-        - mvn test -Dtest="com.napier.sem.utils.*ReportTest"
+
 
 
     - stage: deploy
