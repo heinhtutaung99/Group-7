@@ -1,5 +1,6 @@
 package com.napier.sem.utils;
 
+import com.napier.sem.places.City;
 import com.napier.sem.places.Country;
 import org.junit.jupiter.api.BeforeAll;
 import org.junit.jupiter.api.Test;
@@ -11,8 +12,9 @@ import java.util.ArrayList;
 import java.util.Base64;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
+import static org.junit.jupiter.api.Assertions.assertNull;
 
-public class AppTest {
+class AppTest {
     private static App app;
 
     /**
@@ -60,4 +62,6 @@ public class AppTest {
         assertEquals(239, actual.size());
         assertEquals("a9MholiIbWxR0FLbhMGm6aM7x04=", sha1);
     }
+
+
 }
