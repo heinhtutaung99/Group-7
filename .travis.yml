@@ -15,14 +15,23 @@ install:
 before_script:
   - mvn clean
 
+
 jobs:
   include:
-    - stage: Units Tests
+    - stage: unit tests
       install: skip
-      script:
-        - mvn test -Dtest="com.napier.sem.places.*Test"
-
+      jdk: oraclejdk11
+      script: mvn test -Dtest=com.napier.sem..places.*Test
+    - stage: integration tests
+      jdk: oraclejdk11
+      script: mvn test -Dtest=com.napier.sem.utils.AppTest
     - stage: deploy
       install: skip
       jdk: oraclejdk11
       script: echo "Deploy"
+
+stages:
+  - unit tests
+  - integration tests
+  - name: deploy
+    if: branch = master
