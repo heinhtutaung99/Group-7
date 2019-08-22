@@ -19,7 +19,6 @@ public class City implements Population {
     }
 
 
-
     public String getName() {
         return name;
     }
@@ -36,7 +35,9 @@ public class City implements Population {
         return country;
     }
 
-
+    public String getDistrict() {
+        return district;
+    }
 
     @Override
     public String toString() {
