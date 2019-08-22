@@ -22,7 +22,7 @@ public class AppIntegrationTest
     @Test
     void testGetCity()
     {
-        ArrayList<City> cities =app.getReport8();
+        //ArrayList<City> cities =app.getReport8();
         app.printCityReport(null);
     }
 }
