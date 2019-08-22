@@ -136,7 +136,7 @@ public class App
      * @return
      */
     public ArrayList<City> getReport8()
-    {
+    {ArrayList<City> cities =null;
         try {
             Statement stmt = con.createStatement();
             String strSelect = "";
@@ -145,35 +145,36 @@ public class App
             rset = stmt.executeQuery(strSelect);
             if (rset == null) {
                 System.out.println("no statement execute queries");
+                return null;
             }
-            ArrayList<City> cities = new ArrayList<City>();
+            cities= new ArrayList<City>();
             while (rset.next()) {
                 City report = new City();
                 report.setName( rset.getString(1));
-                System.out.println(rset.getString(2));
                 Country c1 = getCountrybyCode(rset.getString(2));
                 report.setCountry(c1);
                 report.setDistrict(rset.getString(3));
                 report.setPopulation(rset.getInt(4));
                 cities.add(report);
             }
-            return cities;
+           // return cities;
         }
         catch (SQLException e) {
             System.out.println(e.getMessage());
         }
-        return null;
+        return cities;
     }
 
     public Country getCountrybyCode(String ccode)
     {
         Country c = new Country();
         try {
-            Statement stmt = con.createStatement();
-            String strSelect = "";
+            PreparedStatement stmt = con.prepareStatement("select name from country where country.Code = ?");
+           // String strSelect = "";
+            stmt.setString(1,ccode);
             ResultSet rset = null;
-            strSelect = "select name from country where country.Code = '+ccode+' ";
-            rset = stmt.executeQuery(strSelect);
+            rset =stmt.executeQuery();
+            //strSelect = "select name from country where country.Code = '+ccode+' ";
             c.name = rset.getString(1);
 
         }catch(SQLException e)
@@ -236,11 +237,8 @@ public class App
         //a.printCountryReport(countries);
         //ArrayList<City> cities=a.getReport7();
         //a.printCityReport(cities);
-
         ArrayList<City> cities=a.getReport8();
         a.printCityReport(cities);
-
-
         // Disconnect from database
         a.disconnect();
         //city
