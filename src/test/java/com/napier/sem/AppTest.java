@@ -34,7 +34,7 @@ public class AppTest
         citydata.setDistrict("Yangon");
         citydata.setPopulation(102030403);
         cities.add(citydata);
-        app.printCityReport(cities);
+
     }
 }
 
