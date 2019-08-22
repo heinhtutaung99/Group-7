@@ -150,6 +150,7 @@ public class App
             while (rset.next()) {
                 City report = new City();
                 report.setName( rset.getString(1));
+                System.out.println(rset.getString(2));
                 Country c1 = getCountrybyCode(rset.getString(2));
                 report.setCountry(c1);
                 report.setDistrict(rset.getString(3));
@@ -209,7 +210,7 @@ public class App
             return;
         }
         // Print header
-        System.out.println(String.format("%-30s %-20s %-20s %-20s", "Name", "CountryCode", "District", "Population"));
+        System.out.println(String.format("%-30s %-20s %-20s %-20s", "Name", "CountryName", "District", "Population"));
         // Loop over all employees in the list
         for (City report_city : cities)
         {
@@ -235,8 +236,11 @@ public class App
         //a.printCountryReport(countries);
         //ArrayList<City> cities=a.getReport7();
         //a.printCityReport(cities);
+
         ArrayList<City> cities=a.getReport8();
         a.printCityReport(cities);
+
+
         // Disconnect from database
         a.disconnect();
         //city
