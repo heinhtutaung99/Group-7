@@ -12,7 +12,7 @@ import java.util.Base64;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
 
-public class AppIntegration {
+public class AppTest {
     private static App app;
 
     /**
