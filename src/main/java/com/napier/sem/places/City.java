@@ -1,6 +1,9 @@
 package com.napier.sem.places;
 
-public class City {
+import com.napier.sem.utils.Population;
+
+public class City implements Population {
+
     private String name;
     private int population;
     private boolean isCapital;
@@ -14,6 +17,8 @@ public class City {
         this.country = country;
         this.district = district;
     }
+
+
 
     public String getName() {
         return name;
@@ -31,9 +36,7 @@ public class City {
         return country;
     }
 
-    public String getDistrict() {
-        return district;
-    }
+
 
     @Override
     public String toString() {
@@ -44,5 +47,4 @@ public class City {
                 ", district='" + district + '\'' +
                 '}';
     }
-
 }
