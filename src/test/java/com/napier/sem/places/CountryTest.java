@@ -6,9 +6,13 @@ import java.util.ArrayList;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.junit.jupiter.api.Assertions.assertNull;
-
+/**
+ * Declaring class for country test
+ */
 class CountryTest {
-
+    /**
+     * Getting country code using Get Method
+     */
     @Test
     void getCountryCode() {
         // Arrange
@@ -18,7 +22,9 @@ class CountryTest {
         // Assert
         assertEquals("ABC", country.getCountryCode());
     }
-
+    /**
+     * Getting country name using Get Method
+     */
     @Test
     void getName() {
         // Arrange
@@ -29,7 +35,9 @@ class CountryTest {
         assertEquals("Country", country.getName());
     }
 
-
+    /**
+     * Getting districts using Get method
+     */
     @Test
     void getDistricts() {
         // Arrange
@@ -45,6 +53,9 @@ class CountryTest {
         assertEquals(districts, country.getDistricts());
     }
 
+    /**
+     * Getting population using Get method
+     */
     @Test
     void getPopulation() {
         // Arrange
@@ -54,6 +65,9 @@ class CountryTest {
         assertEquals(12345, country.getPopulation());
     }
 
+    /**
+     * Getting cities population using Get method
+     */
     @Test
     void getCitiesPopulation() {
         // Arrange
@@ -74,7 +88,9 @@ class CountryTest {
 
         assertEquals(300, country.getCitiesPopulation());
     }
-
+    /**
+     * Getting Capital name using Get method
+     */
     @Test
     void getCapital() {
         // Arrange
@@ -86,7 +102,9 @@ class CountryTest {
         // Assert
         assertEquals(capital, country.getCapital());
     }
-
+    /**
+     * Getting Language using Get method
+     */
     @Test
     void getLanguages() {
         // Arrange
@@ -103,6 +121,9 @@ class CountryTest {
         assertEquals(languages, country.getLanguages());
     }
 
+    /**
+     * Getting official language using Get method
+     */
     @Test
     void getOfficialLanguages() {
         // Arrange
@@ -122,6 +143,9 @@ class CountryTest {
         assertEquals(expected, country.getOfficialLanguages());
     }
 
+    /**
+     * Getting empty official language using Get method
+     */
     @Test
     void getEmptyOfficialLanguages() {
         // Arrange
@@ -136,7 +160,9 @@ class CountryTest {
         // Assert
         assertNull(country.getOfficialLanguages());
     }
-
+    /**
+     * Getting continent using Get method
+     */
     @Test
     void getContinent() {
         // Arrange
@@ -147,6 +173,9 @@ class CountryTest {
         assertEquals("Continent", country.getContinent());
     }
 
+    /**
+     * Getting region using Get method
+     */
     @Test
     void getRegion() {
         // Arrange
