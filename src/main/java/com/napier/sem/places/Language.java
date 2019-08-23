@@ -1,7 +1,9 @@
 package com.napier.sem.places;
 
 public class Language {
-
+    /**
+     Stores information about language, percentage and country code.
+     */
     private String languageName;
     private double percentage;
     private boolean isOfficial;
