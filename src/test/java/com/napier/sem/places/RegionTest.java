@@ -5,9 +5,14 @@ import org.junit.jupiter.api.Test;
 import java.util.ArrayList;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
-
+/**
+ * Declaring class for Region test
+ */
 class RegionTest {
 
+    /**
+     * Getting region name using Get method
+     */
     @Test
     void getName() {
         //Arrange
@@ -17,6 +22,9 @@ class RegionTest {
         assertEquals("Region", region.getName());
     }
 
+    /**
+     * Getting countries using Get method
+     */
     @Test
     void getCountries() { // Arrange
         ArrayList<Country> countries = new ArrayList<>();
@@ -30,6 +38,9 @@ class RegionTest {
         assertEquals(countries, region.getCountries());
     }
 
+    /**
+     * Getting population using Get method
+     */
     @Test
     void getPopulation() {
         ArrayList<Country> countries = new ArrayList<>();
