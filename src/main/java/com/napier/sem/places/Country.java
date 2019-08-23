@@ -3,7 +3,9 @@ package com.napier.sem.places;
 import com.napier.sem.utils.Population;
 
 import java.util.ArrayList;
-
+/**
+ Stores information about country population, district and continent.
+ */
 public class Country implements Population {
 
     private String countryCode;

@@ -3,7 +3,9 @@ package com.napier.sem.places;
 import com.napier.sem.utils.Population;
 
 import java.util.ArrayList;
-
+/**
+ Stores information about District population and city name
+ */
 public class District implements Population {
 
     private String name;

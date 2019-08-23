@@ -3,7 +3,9 @@ package com.napier.sem.places;
 import com.napier.sem.utils.Population;
 
 import java.util.ArrayList;
-
+/**
+ Stores information about region population and countries
+ */
 public class Region implements Population {
     //Instance variables
     private String name;
