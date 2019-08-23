@@ -15,7 +15,9 @@ public class District implements Population {
         this.name = name;
         this.cities = cities;
     }
-
+    /**
+     * Getting names and cities using Get Method
+     */
     public String getName() {
         return name;
     }
@@ -24,6 +26,9 @@ public class District implements Population {
         return cities;
     }
 
+    /**
+     * Getting population in cities using Get Method
+     */
     public long getPopulation() {
         long districtPopulation = 0;
         for (City city : cities) {
