@@ -6,7 +6,9 @@ import java.sql.*;
 import java.util.ArrayList;
 import java.util.Comparator;
 import java.util.concurrent.TimeUnit;
-
+/**
+ * Declaring App class
+ */
 public class App {
     private Connection connection = null;
     private World world = null;
@@ -47,7 +49,9 @@ public class App {
     }
 
 
-
+    /**
+     * Creating Arraylist for countries in the world
+     */
     public ArrayList<Country> countriesInWorld() {
         ArrayList<Country> countries = new ArrayList<>();
 
@@ -61,7 +65,9 @@ public class App {
 
         return countries;
     }
-
+    /**
+     * Creating Arraylist for continents
+     */
     private ArrayList<Continent> loadContinents() {
         ArrayList<Continent> continents = new ArrayList<>();
         String query = "SELECT DISTINCT Continent FROM country;";
@@ -103,7 +109,9 @@ public class App {
 
         return regions;
     }
-
+    /**
+     * Creating Arraylist for countries in continent
+     */
     public ArrayList<Country> countriesInContinent(String continentName) {
         ArrayList<Country> countries = new ArrayList<>();
         for (Continent currentContinent : world.getContinents()) {
@@ -118,7 +126,9 @@ public class App {
         return countries;
     }
 
-
+    /**
+     * Creating arraylist and query to get data from the database.
+     */
     private ArrayList<Country> loadCountries(String regionName) {
         ArrayList<Country> countries = new ArrayList<>();
         String query = "SELECT Code, Name, Capital, Population, Continent FROM country WHERE Region = ?;";
@@ -148,7 +158,9 @@ public class App {
     }
 
 
-
+    /**
+     * Creating Arraylist and query for the language.
+     */
     private ArrayList<Language> loadLanguages(String countryCode) {
         ArrayList<Language> languages = new ArrayList<>();
         String query = "SELECT Language, IsOfficial, Percentage FROM countrylanguage WHERE CountryCode = ?;";
@@ -203,7 +215,9 @@ public class App {
         return null;
     }
 
-
+    /**
+     * Creating arraylist for Districts
+     */
     private ArrayList<District> loadDistricts(String countryCode, String countryName, City capital) {
         ArrayList<District> districts = new ArrayList<>();
 
@@ -238,7 +252,9 @@ public class App {
 
         return districts;
     }
-
+    /**
+     * Creating arraylist and query for the cities
+     */
     private ArrayList<City> loadCities(String districtName, String countryName, String countryCode, City capital) {
         ArrayList<City> cities = new ArrayList<>();
         String query = "SELECT Name, Population FROM city WHERE District = ? AND CountryCode = ?;";
