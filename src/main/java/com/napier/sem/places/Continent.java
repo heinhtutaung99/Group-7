@@ -17,10 +17,15 @@ public class Continent implements Population {
         this.regions = regions;
     }
 
-    //Getters
+    /**
+     * Getting name using Get Method
+     */
     public String getName() { return name; }
     public ArrayList<Region> getRegions() { return regions; }
 
+    /**
+     * Getting population in regions using Get Method
+     */
     public long getPopulation() {
         long continentPopulation = 0;
         for (Region region : regions) {
