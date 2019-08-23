@@ -60,7 +60,7 @@ class AppTest {
         //Assert
         String sha1 = listToSHA1(actual);
         assertEquals(239, actual.size());
-        assertEquals("a9MholiIbWxR0FLbhMGm6aM7x04=", sha1);
+        assertEquals("8/o7+3uFB368QRAhQIW5SAtTv3c=", sha1);
     }
 
 
