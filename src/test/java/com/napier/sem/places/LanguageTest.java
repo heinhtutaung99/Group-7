@@ -4,9 +4,14 @@ import org.junit.jupiter.api.Test;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.junit.jupiter.api.Assertions.assertTrue;
-
+/**
+ * Declaring class for Language test
+ */
 class LanguageTest {
 
+    /**
+     * Getting language name using Get method
+     */
     @Test
     void getLanguageName() {
         //Arrange
@@ -16,6 +21,9 @@ class LanguageTest {
         assertEquals("Language", language.getLanguageName());
     }
 
+    /**
+     * Getting percentage using Get method
+     */
     @Test
     void getPercentage() {
         //Arrange
@@ -24,6 +32,7 @@ class LanguageTest {
         //Assert
         assertEquals(99.9, language.getPercentage());
     }
+
 
     @Test
     void isOfficial() {
