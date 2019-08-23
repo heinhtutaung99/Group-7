@@ -5,9 +5,14 @@ import org.junit.jupiter.api.Test;
 import java.util.ArrayList;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
-
+/**
+ * Declaring class for World test
+ */
 class WorldTest {
 
+    /**
+     * Getting continents name using Get method
+     */
     @Test
     void getContinents() {
         // Arrange
@@ -23,6 +28,9 @@ class WorldTest {
         assertEquals(continents, world.getContinents());
     }
 
+    /**
+     * Getting population using Get method
+     */
     @Test
     void getPopulation() {
         // Arrange
