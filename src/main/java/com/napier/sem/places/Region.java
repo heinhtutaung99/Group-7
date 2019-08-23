@@ -17,10 +17,15 @@ public class Region implements Population {
         this.countries = countries;
     }
 
-    //Getters
+    /**
+     * Getting country and names with Get Method
+     */
     public String getName() { return name; }
     public ArrayList<Country> getCountries() { return countries; }
 
+    /**
+     * Getting population with Get Method
+     */
     public long getPopulation() {
         long regionPopulation = 0;
         for (Country country : countries) {
