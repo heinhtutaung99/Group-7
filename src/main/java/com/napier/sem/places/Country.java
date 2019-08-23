@@ -29,22 +29,37 @@ public class Country implements Population {
         this.region = region;
     }
 
+    /**
+     * Getting Countrycode using Get Method
+     */
     public String getCountryCode() {
         return countryCode;
     }
 
+    /**
+     * Getting Name using Get Method
+     */
     public String getName() {
         return name;
     }
 
+    /**
+     * Getting Districts using Get Method
+     */
     public ArrayList<District> getDistricts() {
         return districts;
     }
 
+    /**
+     * Getting Capital using Get Method
+     */
     public City getCapital() {
         return capital;
     }
 
+    /**
+     * Getting Language using Get Method
+     */
     public ArrayList<Language> getLanguages() {
         return languages;
     }
@@ -63,7 +78,9 @@ public class Country implements Population {
 
         return officialLanguages;
     }
-
+    /**
+     * Getting population in district using Get Method
+     */
     public long getPopulation() {
         return population;
     }
@@ -76,10 +93,16 @@ public class Country implements Population {
         return countryPopulation;
     }
 
+    /**
+     * Getting Continent using Get Method
+     */
     public String getContinent() {
         return continent;
     }
 
+    /**
+     * Getting Region using Get Method
+     */
     public String getRegion() {
         return region;
     }
