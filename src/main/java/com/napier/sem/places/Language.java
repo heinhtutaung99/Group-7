@@ -13,11 +13,15 @@ public class Language {
         this.percentage = percentage;
         this.isOfficial = isOfficial;
     }
-
+    /**
+     * Getting Language Name with Get Method
+     */
     public String getLanguageName() {
         return languageName;
     }
-
+    /**
+     * Getting Percentage with Get Method
+     */
     public double getPercentage() {
         return percentage;
     }
