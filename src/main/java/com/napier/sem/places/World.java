@@ -3,7 +3,9 @@ package com.napier.sem.places;
 import com.napier.sem.utils.Population;
 
 import java.util.ArrayList;
-
+/**
+ Stores information about the attributes of the world.
+ */
 public class World implements Population {
 
     private World() {}
