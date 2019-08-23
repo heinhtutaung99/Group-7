@@ -4,9 +4,13 @@ import org.junit.jupiter.api.Test;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.junit.jupiter.api.Assertions.assertTrue;
-
+/**
+ * Declaring class for the city test
+ */
 class CityTest {
-
+    /**
+     * Getting city name using Get Method
+     */
     @Test
     void getName() {
         //Arrange
@@ -15,7 +19,9 @@ class CityTest {
         //Assert
         assertEquals("City", city.getName());
     }
-
+    /**
+     * Getting population in the city using Get Method
+     */
     @Test
     void getPopulation() {
         //Arrange
@@ -33,7 +39,9 @@ class CityTest {
         //Assert
         assertTrue(city.isCapital());
     }
-
+    /**
+     * Getting Country using Get Method
+     */
     @Test
     void getCountry() {
         //Arrange
@@ -43,6 +51,9 @@ class CityTest {
         assertEquals("Country", city.getCountry());
     }
 
+    /**
+     * Getting District using Get Method
+     */
     @Test
     void getDistrict() {
         //Arrange
