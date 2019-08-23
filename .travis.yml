@@ -25,7 +25,7 @@ jobs:
       script:
           - sudo docker build -t db db
           - sudo docker run --rm -d -p 3306:3306 db
-          - mvn test -Dtest="com.napier.sem.utils.AppTest"
+          - mvn test -Dtest="com.napier.sem.places.*Test"
     - stage: deploy
       install: skip
       jdk: oraclejdk11
