@@ -22,7 +22,10 @@ jobs:
       install: skip
       script: mvn test -Dtest=com.napier.sem.places.*Test
     - stage: Integration
-      script: mvn test -Dtest=com.napier.sem.places.*Test
+      script:
+          - sudo docker build -t db db/
+          - sudo docker run --rm -d -p 3306:3306 db
+          - mvn test -Dtest="com.napier.sem.utils.AppTest"
     - stage: deploy
       install: skip
       jdk: oraclejdk11
@@ -34,7 +37,7 @@ before_script:
 
 stages:
   - unit tests
-  - integration tests
+  - Integration
   - name: deploy
     if: branch = master
 
