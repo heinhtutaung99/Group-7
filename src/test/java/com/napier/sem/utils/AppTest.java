@@ -13,7 +13,9 @@ import java.util.Base64;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.junit.jupiter.api.Assertions.assertNull;
-
+/**
+ * Declaring class for App test
+ */
 class AppTest {
     private static App app;
 
