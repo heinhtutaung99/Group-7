@@ -5,9 +5,13 @@ import org.junit.jupiter.api.Test;
 import java.util.ArrayList;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
-
+/**
+ * Declaring class for District test
+ */
 class DistrictTest {
-
+    /**
+     * Getting district name using Get method
+     */
     @Test
     void getName() {
         // Arrange
@@ -16,6 +20,9 @@ class DistrictTest {
         assertEquals("District", district.getName());
     }
 
+    /**
+     * Getting cities using Get method
+     */
     @Test
     void getCities() {
         // Arrange
@@ -30,6 +37,9 @@ class DistrictTest {
         assertEquals(cities, district.getCities());
     }
 
+    /**
+     * Getting population using Get method
+     */
     @Test
     void getPopulation() {
         // Arrange
