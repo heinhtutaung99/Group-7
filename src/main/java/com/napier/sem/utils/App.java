@@ -104,6 +104,20 @@ public class App {
         return regions;
     }
 
+    public ArrayList<Country> countriesInContinent(String continentName) {
+        ArrayList<Country> countries = new ArrayList<>();
+        for (Continent currentContinent : world.getContinents()) {
+            if (currentContinent.getName().equals(continentName)) {
+                for (Region region : currentContinent.getRegions()) {
+                    countries.addAll(region.getCountries());
+                }
+                break;
+            }
+        }
+        countries.sort(Comparator.comparingLong(Country::getPopulation).reversed());
+        return countries;
+    }
+
 
     private ArrayList<Country> loadCountries(String regionName) {
         ArrayList<Country> countries = new ArrayList<>();

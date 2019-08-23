@@ -47,7 +47,7 @@ class AppTest {
     @BeforeAll
     static void init() {
         app = new App();
-        app.connect("localhost:3306", 1); //This needs to be localhost and not db for some reason
+        app.connect("localhost:3306"); //This needs to be localhost and not db for some reason
         app.loadDatabase();
         app.disconnect();
     }

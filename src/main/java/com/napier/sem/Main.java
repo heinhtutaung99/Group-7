@@ -53,6 +53,20 @@ public class Main {
                     break;
                 }
 
+
+                case 2: {
+                    System.out.println("All the countries in a continent organised by largest population to smallest.");
+                    System.out.print("Continent: ");
+                    String search = answerIn.nextLine();
+
+                    ArrayList<Country> countries = app.countriesInContinent(search);
+                    for(Country c : countries) {
+                        System.out.println(c);
+                    }
+
+                    break;
+                }
+
                 default:
                     System.err.println("ERROR: Unknown question ID");
                     menuIn.nextLine(); //Clear input buffer
