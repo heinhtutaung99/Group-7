@@ -1,7 +1,9 @@
 package com.napier.sem.places;
 
 import com.napier.sem.utils.Population;
-
+/**
+Stores information about city population and capital name
+*/
 public class City implements Population {
 
     private String name;
