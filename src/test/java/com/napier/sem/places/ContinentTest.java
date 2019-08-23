@@ -5,9 +5,13 @@ import org.junit.jupiter.api.Test;
 import java.util.ArrayList;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
-
+/**
+ * Declaring class for continent test
+ */
 class ContinentTest {
-
+    /**
+     * Getting continent name using Get method
+     */
     @Test
     void getName() {
         //Arrange
@@ -16,7 +20,9 @@ class ContinentTest {
         //Assert
         assertEquals("Continent", continent.getName());
     }
-
+    /**
+     * Getting regions using Get method
+     */
     @Test
     void getRegions() {
         // Arrange
@@ -31,6 +37,9 @@ class ContinentTest {
         assertEquals(regions, continent.getRegions());
     }
 
+    /**
+     * Getting population using Get Method
+     */
     @Test
     void getPopulation() {
         // Arrange
