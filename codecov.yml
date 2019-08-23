@@ -1,2 +1,3 @@
 ignore:
   - "src/main/java/com/napier/sem/Main.java"
+  - "src/main/java/com/napier/sem/utils/App.java"
