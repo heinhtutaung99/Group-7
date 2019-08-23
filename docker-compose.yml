@@ -1,13 +1,12 @@
+
+
 version: '3.3'
-
 services:
+  db:
+    build: src/main/resources/
+    restart: always
 
-  # Application Dockerfile is in same folder which is .
   app:
     build: .
     links:
       - db
-  # db is is db folder
-  db:
-    build: db/.
-    restart: always
