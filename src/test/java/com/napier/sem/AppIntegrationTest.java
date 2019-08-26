@@ -15,7 +15,7 @@ public class AppIntegrationTest {
     {
         app = new App();
         db = DatabaseHandler.Instance();
-        db.connect("localhost:3306");
+        db.connect("localhost:33060");
     }
 
 
