@@ -30,6 +30,7 @@ public class App
 
         app.printReportOptions();
 
+
         app.callReport(1);
 
         // Disconnect from database

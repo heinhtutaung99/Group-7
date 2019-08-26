@@ -2,20 +2,9 @@ package com.napier.sem;
 /**
  * Create public class for the City
  */
-public class City {
-    String name;
-    String countrycode;
-    String district;
-    int population;
-    public City cty;
-
+public class City extends Report {
     @Override
-    public String toString() {
-        return "City{" +
-                ", name='" + name + '\'' +
-                "countrycode='" + countrycode + '\'' +
-                ", district='" + district + '\'' +
-                ", population=" + population +'\'' +
-                '}';
+    ReportType getReportType() {
+        return ReportType.CityReport;
     }
 }
