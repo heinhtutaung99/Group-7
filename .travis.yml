@@ -10,6 +10,10 @@ services:
   - docker
 
 install:
+  # Build database image.
+  - docker build -t database db/.
+  # Run the database image.
+  - docker run --rm -d -e MYSQL_ROOT_PASSWORD=pass -p 33060:3306 database
   # Build and install the application.
   - mvn install -DskipTests=true -Dmaven.javadoc.skip=true -B -V
 
@@ -20,11 +24,11 @@ before_script:
 # Job stages
 jobs:
   include:
-    - stage: Integration_test
-    script:
-          - docker build -t db db/
-          - docker run --rm -d -p 3306:3306 db
-          - mvn test -Dtest=com.napier.sem.AppIntegrationTest
+    - stage: integration tests
+      jdk: oraclejdk11
+      # Tell Maven to run the integration tests.
+      script: mvn test -Dtest=com.napier.sem.AppIntegrationTest
 
 stages:
-  - integration_test
+
+  - integration tests
