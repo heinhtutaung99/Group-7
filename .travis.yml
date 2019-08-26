@@ -20,10 +20,11 @@ before_script:
 # Job stages
 jobs:
   include:
-    - stage: integration tests
-      jdk: oraclejdk11
-      # Tell Maven to run the integration tests.
-      script: mvn test -Dtest=com.napier.sem.AppIntegrationTest
+    - stage: Integration
+    script:
+          - docker build -t db db/
+          - docker run --rm -d -p 3306:3306 db
+          - mvn test -Dtest=com.napier.sem.AppIntegrationTest
 
 stages:
   - integration tests
