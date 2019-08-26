@@ -114,7 +114,7 @@ public class DatabaseHandler {
             String strSelect = "";
             ResultSet rset = null;
 
-            strSelect = "select con.code, con.name, con.continent, con.population, cit.name as capital from country con join city cit on capital=id where continent = ? order by population DESC;";
+            strSelect = "select con.code, con.name, con.continent, con.region , con.population, cit.name as capital from country con join city cit on capital=id where continent = ? order by population DESC;";
 
             PreparedStatement preparedStatement=con.prepareStatement(strSelect);
             preparedStatement.setString(1,continent);
