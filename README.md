@@ -14,21 +14,12 @@
 
 
 # Team Contribution Report 
-# Code Review -1 
-| Scrum Role  | Member Name | Percentage of Contribution  |
-| -------------      | -------------  |------------- |
-| Scrum Master       | Tin Aung Yin   | 0.33 |  
-| Development Leader | Myat Thu Ta    | 0.33 | 
-| Product Owner      | Min Hein Htet  | 0.33 | 
-|                    | Total Status   | 100% | 
+|      | Code Review 1 | Code Review 2 | Code Review 3 | Code Review 4 | Final Deliverable | Average |
+|------|---------------|---------------|---------------|---------------|-------------------|-------|
+| Tin Aung Yin | 0.33 | 0.33 | 0.33 | 0.33 | 0.33 | 0.33 |
+| Min Hein Htet | 0.33 | 0.33 | 0.33 | 0.33 | 0.33 | 0.33 |
+| Myat Thu Ta | 0.33 | 0.33 | 0.33 | 0.33 | 0.33 | 0.33 |
 
-# Code Review -2 
-| Scrum Role  | Member Name | Percentage of Contribution  |
-| -------------      | -------------  |------------- |
-| Scrum Master       | Tin Aung Yin   | 0.33 |  
-| Development Leader | Myat Thu Ta    | 0.33 | 
-| Product Owner      | Min Hein Htet  | 0.33 | 
-|                    | Total Status   | 100% | 
 
 
 - Add Build Badge [![Build Status](https://travis-ci.org/devops-set09623/Group-7.svg?branch=master)](https://travis-ci.org/devops-set09623/Group-7)
