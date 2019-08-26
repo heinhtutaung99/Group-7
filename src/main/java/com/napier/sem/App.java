@@ -41,12 +41,14 @@ public class App
     private void callReport(int num) {
 
         Scanner sc = new Scanner(System.in);
-
+        Report report;
 
         switch (num) {
 
             case 1:
-                System.out.println("This is case 1");
+                report = db.getReportOne();
+                app.printReport(report);
+                break;
 
             default:
                 System.out.println("Not implemented yet");
@@ -98,5 +100,20 @@ public class App
         System.out.println("35. The number of people who speak Spanish");
         System.out.println("36. The number of people who speak Arabic");
         System.out.println("\nEnter 0 to exit\n");
+    }
+
+
+
+    protected void printReport(Report report) {
+
+        if (report instanceof Country) {
+            Country.printReportHeader();
+
+            for (Country.CountryReportItem item : ((Country) report).get_reportsItems()) {
+                System.out.printf(
+                        Country.getReportFormat(), item.get_code(), item.get_name(), item.get_continent(), item.get_region(), item.get_population(), item.get_capital());
+                System.out.print("\n");
+            }
+        }
     }
 }

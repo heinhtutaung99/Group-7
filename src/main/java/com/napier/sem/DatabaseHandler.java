@@ -1,8 +1,6 @@
 package com.napier.sem;
 
-import java.sql.Connection;
-import java.sql.DriverManager;
-import java.sql.SQLException;
+import java.sql.*;
 
 public class DatabaseHandler {
 
@@ -80,6 +78,34 @@ public class DatabaseHandler {
                 System.out.println("Error closing connection to database");
             }
         }
+    }
+
+
+
+    protected Report getReportOne() {
+
+        // REPORT 1
+        try {
+            Statement stmt = con.createStatement();
+            String strSelect = "";
+            ResultSet rset = null;
+
+            strSelect =
+                    "select con.code, con.name, con.continent, con.region, con.population, cit.name as capital from country con join city cit on capital=id order by population DESC;";
+            rset = stmt.executeQuery(strSelect);
+
+            Country report = new Country();
+
+            // Loop on result set and add report items to report
+            while (rset.next()) {
+                Country.CountryReportItem item = report.new CountryReportItem(rset.getString(1), rset.getString(2), rset.getString(3), rset.getString(4), rset.getInt(5), rset.getString(6));
+                report.addItemToReport(item);
+            }
+            return report;
+        } catch (SQLException e) {
+            System.out.println(e.getMessage());
+        }
+        return null;
     }
 
 }
