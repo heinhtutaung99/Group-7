@@ -34,16 +34,19 @@
 | 24 | The population of people, people living in cities, and people not living in cities in each region. | Yes | ![](screenshot/3.png) |
 | 25 | The population of people, people living in cities, and people not living in cities in each country. | Yes | ![](screenshot/3.png) |
 | 26 | The population of the world. | Yes | ![](screenshot/3.png) |
-| 27 | All the countries in a region organised by largest population to smallest. | Yes | ![](screenshot/3.png) |
-| 28 | All the countries in a region organised by largest population to smallest. | Yes | ![](screenshot/3.png) |
-| 29 | All the countries in a region organised by largest population to smallest. | Yes | ![](screenshot/3.png) |
-| 30 | All the countries in the world organised by largest population to smallest. | Yes | ![](screenshot/city_1.PNG) |
-| 31 | All the countries in the world organised by largest population to smallest. | Yes | ![](screenshot/city_1.PNG) |
-| 32 | All the countries in a continent organised by largest population to smallest. | Yes | ![](screenshot/2.png) |
-| 33 | All the countries in a region organised by largest population to smallest. | Yes | ![](screenshot/3.png) |
-| 34 | All the countries in a region organised by largest population to smallest. | Yes | ![](screenshot/3.png) |
-| 35 | All the countries in a region organised by largest population to smallest. | Yes | ![](screenshot/3.png) |
-| 36 | All the countries in a region organised by largest population to smallest. | Yes | ![](screenshot/3.png) |
+| 27 | The population of a continent. | Yes | ![](screenshot/3.png) |
+| 28 | The population of a region. | Yes | ![](screenshot/3.png) |
+| 29 | The population of a country. | Yes | ![](screenshot/3.png) |
+| 30 | The population of a district. | Yes | ![](screenshot/city_1.PNG) |
+| 31 | The population of a city. | Yes | ![](screenshot/city_1.PNG) |
+| 32 | the number of people who speak the Chinese languages from greatest number to smallest, including the percentage of the world population. | Yes | ![](screenshot/2.png) |
+| 33 | the number of people who speak the English languages from greatest number to smallest, including the percentage of the world population. | Yes | ![](screenshot/3.png) |
+| 34 | the number of people who speak the Hindi languages from greatest number to smallest, including the percentage of the world population. | Yes | ![](screenshot/3.png) |
+| 35 | the number of people who speak the Spanish languages from greatest number to smallest, including the percentage of the world population. | Yes | ![](screenshot/3.png) |
+| 36 | the number of people who speak the Arabic languages from greatest number to smallest, including the percentage of the world population. | Yes | ![](screenshot/3.png) |
+
+
+
 
 # Team Contribution Report 
 |      | Code Review 1 | Code Review 2 | Code Review 3 | Code Review 4 | Final Deliverable | Average |
