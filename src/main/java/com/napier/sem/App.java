@@ -30,10 +30,29 @@ public class App
 
         app.printReportOptions();
 
+        app.callReport(1);
+
         // Disconnect from database
         db.disconnect();
 
     }
+
+    private void callReport(int num) {
+
+        Scanner sc = new Scanner(System.in);
+
+
+        switch (num) {
+
+            case 1:
+                System.out.println("This is case 1");
+
+            default:
+                System.out.println("Not implemented yet");
+                break;
+        }
+    }
+
 
 
     /**
