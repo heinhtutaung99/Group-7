@@ -185,6 +185,11 @@ public class App
                 app.printReport(report);
                 break;
 
+            case 17:
+                report = db.getReportSeventeen();
+                app.printReport(report);
+                break;
+
 
 
 
@@ -259,6 +264,14 @@ public class App
             City.printReportHeader();
             for(City.CityReportItem item : ((City) report).get_reportsItems()){
                 System.out.printf(City.getReportFormat(), item.get_name(), item.get_country(), item.get_district(), item.get_population());
+                System.out.print("\n");
+            }
+        }
+
+        if (report instanceof CapitalCity){
+            CapitalCity.printReportHeader();
+            for (CapitalCity.CapitalCityReportItem item : ((CapitalCity) report).get_reportsItems()){
+                System.out.printf(CapitalCity.getReportFormat(),item.get_name(),item.get_population(),item.get_Country());
                 System.out.print("\n");
             }
         }
