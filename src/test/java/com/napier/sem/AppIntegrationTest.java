@@ -140,5 +140,17 @@ public class AppIntegrationTest {
         assertEquals("Mandalay", i.get_name());
     }
 
+    @Test
+    void testReportSixteen()
+    {
+        City r = (City) db.getReportSixteen(3, "Mandalay");
+
+        City.CityReportItem i = r.get_reportsItems().get(0);
+        assertEquals("Myanmar", i.get_country());
+    }
+
+
+
+
 
 }
