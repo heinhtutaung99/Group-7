@@ -2,6 +2,7 @@ package com.napier.sem;
 
 import java.sql.*;
 import java.util.ArrayList;
+import java.util.NoSuchElementException;
 import java.util.Scanner;
 
 
@@ -17,6 +18,7 @@ public class App
      * @param args args passed into main
      */
     public static void main(String[] args) {
+        boolean loop = true;
 
         // Connect to database
         app = new App();
@@ -31,11 +33,35 @@ public class App
         app.printReportOptions();
 
 
-        app.callReport(4);
+        // Loop until user enters 0 to exit
+        while (loop) {
+            int choice = app.getUserChoice();
+            if (choice == 0) {
+                loop = false;
+            } else {
+                app.callReport(choice);
+            }
+        }
 
         // Disconnect from database
         db.disconnect();
 
+    }
+
+    /**
+     * Get input from user
+     */
+    private int getUserChoice() {
+
+        try {
+            System.out.println("\nEnter report number: "); // Prompt user for input
+            Scanner sc = new Scanner(System.in);
+            return sc.nextInt();
+        } catch (NoSuchElementException ex) {
+            System.out.println("No input or incorrect input captured");
+            System.out.println(ex.getMessage());
+        }
+        return 0;
     }
 
     private void callReport(int num) {
