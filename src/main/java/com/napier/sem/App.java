@@ -167,6 +167,18 @@ public class App
                 app.printReport(report);
                 break;
 
+            case 15:
+                System.out.println("Enter country: ");
+                String con = sc.nextLine();
+                System.out.println("Enter number: ");
+                int nu = sc.nextInt();
+                report = db.getReportFifteen(nu, con);
+                app.printReport(report);
+                break;
+
+
+
+
 
 
             default:
