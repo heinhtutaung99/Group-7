@@ -122,5 +122,14 @@ public class AppIntegrationTest {
         assertEquals("Mumbai (Bombay)", i.get_name());
     }
 
+    @Test
+    void testReportFourteen()
+    {
+        City r = (City) db.getReportFourteen(5, "Eastern Asia");
+
+        City.CityReportItem i = r.get_reportsItems().get(0);
+        assertEquals("Seoul", i.get_name());
+    }
+
 
 }
