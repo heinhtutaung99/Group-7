@@ -112,6 +112,11 @@ public class App
                 app.printReport(report);
                 break;
 
+            case 7:
+                report = db.getReportSeven();
+                app.printReport(report);
+                break;
+
             default:
                 System.out.println("Not implemented yet");
                 break;
@@ -174,6 +179,14 @@ public class App
             for (Country.CountryReportItem item : ((Country) report).get_reportsItems()) {
                 System.out.printf(
                         Country.getReportFormat(), item.get_code(), item.get_name(), item.get_continent(), item.get_region(), item.get_population(), item.get_capital());
+                System.out.print("\n");
+            }
+        }
+
+        if (report instanceof City){
+            City.printReportHeader();
+            for(City.CityReportItem item : ((City) report).get_reportsItems()){
+                System.out.printf(City.getReportFormat(), item.get_name(), item.get_country(), item.get_district(), item.get_population());
                 System.out.print("\n");
             }
         }
