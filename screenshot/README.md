@@ -1,0 +1,1 @@
+Screenshot of the Report wold be store in that folder. 
