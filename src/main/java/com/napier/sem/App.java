@@ -124,6 +124,13 @@ public class App
                 app.printReport(report);
                 break;
 
+
+            case 9:
+                System.out.println("Enter Region");
+                report = db.getReportNine(sc.nextLine());
+                app.printReport(report);
+                break;
+
             default:
                 System.out.println("Not implemented yet");
                 break;
