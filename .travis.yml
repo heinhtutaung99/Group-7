@@ -35,10 +35,18 @@ jobs:
       jdk: oraclejdk11
       # Tell Maven to run the integration tests.
       script: mvn test -Dtest=com.napier.sem.AppIntegrationTest
+    - stage: deploy
+      install: skip
+      jdk: oraclejdk11
+      script:
+          - mvn package -DskipTests=true -Dmaven.javadoc.skip=true
+          - docker-compose up --abort-on-container-exit
 
 stages:
   - unit tests
   - integration_tests
+  - name: deploy
+    if: branch = master
 
 after_success:
   # Push code coverage data to codecov.
