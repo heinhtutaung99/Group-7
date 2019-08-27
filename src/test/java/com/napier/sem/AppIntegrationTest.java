@@ -57,4 +57,12 @@ public class AppIntegrationTest {
         Country r = (Country) db.getReportFive("Europe", 30);
         assertEquals(30, r.get_reportsItems().size());
     }
+
+
+    @Test
+    void testReportSix(){
+        Country r = (Country) db.getReportSix("Caribbean", 2);
+        Country.CountryReportItem item = r.get_reportsItems().get(1);
+        assertEquals("Santo Domingo de GuzmÃ¡n", item.get_capital());
+    }
 }
