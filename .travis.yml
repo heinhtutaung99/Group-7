@@ -24,11 +24,15 @@ before_script:
 # Job stages
 jobs:
   include:
-    - stage: integration tests
+    - stage: integration_tests
       jdk: oraclejdk11
       # Tell Maven to run the integration tests.
       script: mvn test -Dtest=com.napier.sem.AppIntegrationTest
 
 stages:
 
-  - integration tests
+  - integration_tests
+
+after_success:
+  # Push code coverage data to codecov.
+  - bash <(curl -s https://codecov.io/bash)
