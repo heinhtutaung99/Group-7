@@ -20,7 +20,6 @@ public class AppTest
         Country r = new Country();
         Country.CountryReportItem item = new Country().new CountryReportItem();
         r.addItemToReport(item);
-
         item.set_capital("Yangon");
         item.set_code("MM");
         item.set_continent("Asia");
