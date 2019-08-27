@@ -24,13 +24,20 @@ before_script:
 # Job stages
 jobs:
   include:
+    # Unit test stage.
+    - stage: unit tests
+      install: skip
+      jdk: oraclejdk11
+      # Tell Maven to run the unit tests.
+      script: mvn test -Dtest=com.napier.sem.AppTest
+
     - stage: integration_tests
       jdk: oraclejdk11
       # Tell Maven to run the integration tests.
       script: mvn test -Dtest=com.napier.sem.AppIntegrationTest
 
 stages:
-
+  - unit tests
   - integration_tests
 
 after_success:
