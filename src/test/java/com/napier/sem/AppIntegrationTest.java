@@ -72,4 +72,11 @@ public class AppIntegrationTest {
         City.CityReportItem item = r.get_reportsItems().get(0);
         assertEquals(10500000, item.get_population());
     }
+
+    @Test
+    void testReportEight(){
+        City r = (City) db.getReportEight("Asia");
+        City.CityReportItem i = r.get_reportsItems().get(0);
+        assertEquals(10500000, i.get_population());
+    }
 }
