@@ -88,5 +88,13 @@ public class AppIntegrationTest {
         assertEquals("Seoul", i.get_district());
     }
 
+    @Test
+    void testReportTen(){
+        City r = (City) db.getReportTen("Myanmar");
+
+        City.CityReportItem i = r.get_reportsItems().get(0);
+        assertEquals(3361700, i.get_population());
+    }
+
 
 }
