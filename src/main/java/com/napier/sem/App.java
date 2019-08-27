@@ -31,7 +31,7 @@ public class App
         app.printReportOptions();
 
 
-        app.callReport(3);
+        app.callReport(4);
 
         // Disconnect from database
         db.disconnect();
@@ -59,6 +59,12 @@ public class App
             case 3:
                 System.out.println("Enter region");
                 report=db.getReportThree(sc.nextLine());
+                app.printReport(report);
+                break;
+
+            case 4:
+                System.out.println("Enter number");
+                report = db.getReportFour(sc.nextInt());
                 app.printReport(report);
                 break;
 
