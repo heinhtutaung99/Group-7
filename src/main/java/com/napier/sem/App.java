@@ -117,6 +117,13 @@ public class App
                 app.printReport(report);
                 break;
 
+
+            case 8:
+                System.out.println("Enter Continent");
+                report = db.getReportEight(sc.nextLine());
+                app.printReport(report);
+                break;
+
             default:
                 System.out.println("Not implemented yet");
                 break;
