@@ -354,4 +354,31 @@ public class DatabaseHandler {
     }
 
 
+
+    protected Report getReportEleven(String district) {
+
+        // REPORT 11
+        try {
+            ResultSet rset = null;
+
+            String select =
+                    "select city.name, country.name, city.district, city.population from city city join country country on CountryCode=code where district = ? order by city.population DESC;";
+            PreparedStatement preparedStatement = con.prepareStatement(select);
+            preparedStatement.setString(1, district);
+            rset = preparedStatement.executeQuery();
+            City report = new City();
+
+            // Loop on result set and add report items to report
+            while (rset.next()) {
+                City.CityReportItem item = report.new CityReportItem(rset.getString(1), rset.getString(2), rset.getString(3), rset.getInt(4));
+                report.addItemToReport(item);
+            }
+            return report;
+        } catch (SQLException e) {
+            System.out.println(e.getMessage());
+        }
+        return null;
+    }
+
+
 }
