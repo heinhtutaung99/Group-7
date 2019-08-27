@@ -3,6 +3,7 @@ package com.napier.sem;
 import org.junit.jupiter.api.BeforeAll;
 import org.junit.jupiter.api.Test;
 
+import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.junit.jupiter.api.Assertions.assertTrue;
 
 public class AppIntegrationTest {
@@ -15,7 +16,7 @@ public class AppIntegrationTest {
     {
         app = new App();
         db = DatabaseHandler.Instance();
-        db.connect("localhost:33060");
+        db.connect("localhost:3306");
     }
 
 
@@ -26,5 +27,12 @@ public class AppIntegrationTest {
         int size =r.get_reportsItems().size();
         assertTrue(size >0);
 
+    }
+
+    @Test
+    void testReportTwo(){
+        Country r = (Country) db.getReportTwo("Africa");
+        Country.CountryReportItem i = r.get_reportsItems().get(0);
+        assertEquals(111506000, i.get_population());
     }
 }
