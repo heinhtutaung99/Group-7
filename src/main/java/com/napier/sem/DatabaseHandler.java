@@ -134,4 +134,32 @@ public class DatabaseHandler {
         return null;
     }
 
+
+
+    protected Report getReportThree(String region){
+        //REPORT 3
+        try {
+            String strSelect = "";
+            ResultSet rset = null;
+
+            strSelect = "select con.code, con.name, con.continent, con.region , con.population, cit.name as capital from country con join city cit on capital=id where region = ? order by population DESC;";
+
+            PreparedStatement preparedStatement=con.prepareStatement(strSelect);
+            preparedStatement.setString(1,region);
+
+            rset = preparedStatement.executeQuery();
+            Country report=new Country();
+
+            //Loop on result set and add report items to report
+            while (rset.next()){
+                Country.CountryReportItem item=report.new CountryReportItem(rset.getString(1), rset.getString(2), rset.getString(3), rset.getString(4), rset.getInt(5), rset.getString(6));
+                report.addItemToReport(item);
+            }
+            return report;
+        } catch (SQLException e){
+            System.out.println(e.getMessage());
+        }
+        return null;
+    }
+
 }
