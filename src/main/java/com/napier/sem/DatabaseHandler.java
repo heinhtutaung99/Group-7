@@ -581,6 +581,34 @@ public class DatabaseHandler {
     }
 
 
+    protected Report getReportEighteen( String continent)  // REPORT 18
+    {
+        try {
+            String strSelect = "";
+            ResultSet rset = null;
+
+            strSelect =
+                    "select city.name, country.name, city.population from city city join country country on id=capital where continent = ? order by city.population DESC;;";
+
+            PreparedStatement preparedStatement = con.prepareStatement(strSelect);
+            preparedStatement.setString(1, continent);
+
+            rset = preparedStatement.executeQuery();
+            CapitalCity report = new CapitalCity();
+
+            while (rset.next()) {
+                CapitalCity.CapitalCityReportItem item = report.new CapitalCityReportItem(rset.getString(1), rset.getString(2), rset.getInt(3));
+                report.addItemToReport(item);
+            }
+
+            return report;
+        } catch (SQLException e) {
+            System.out.println(e.getMessage());
+        }
+
+        return null;
+    }
+
 
 
 

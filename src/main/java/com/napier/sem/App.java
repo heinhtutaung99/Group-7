@@ -191,7 +191,12 @@ public class App
                 break;
 
 
-
+            case 18:
+                System.out.println("Enter continent: ");
+                String continen = sc.nextLine();
+                report = db.getReportEighteen(continen);
+                app.printReport(report);
+                break;
 
 
             default:
